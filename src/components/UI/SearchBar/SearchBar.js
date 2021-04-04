@@ -10,11 +10,8 @@ const SearchBar = () => {
     const [myOptions, setMyOptions] = useState([])
 
     const getDataFromAPI = () => {
-        console.log("Options Fetched from API")
-
         axios.get('https://jsonplaceholder.typicode.com/posts',)
             .then((res) => {
-                console.log(res.data)
                 for (var i = 0; i < res.data.length; i++) {
                     myOptions.push(res.data[i].title)
                 }

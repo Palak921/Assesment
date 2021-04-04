@@ -11,7 +11,6 @@ class Jobs extends Component {
 
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts').then(res => {
-            console.log(res.data);
             this.props.change(res.data)
         })
             .catch(err => {
@@ -24,7 +23,6 @@ class Jobs extends Component {
         return (
             <div>
                 <ul >
-                    {console.log(this.props.data)}
                     {this.props.data.map(data => (
                         <li key={data.id}>
                             <Job data={data.body} id={data.id}

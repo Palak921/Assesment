@@ -10,14 +10,12 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case true: {
-            console.log('clicked dark');
             return {
                 ...state,
                 dark: false
             }
         }
         case false: {
-            console.log('clicked');
             return {
 
                 ...state,
@@ -30,7 +28,6 @@ const reducer = (state = initialState, action) => {
                 return e.id === action.value;
             });
             const finalData = bigCities.map(data => data.body)
-            console.log(bigCities.map(data => data.id));
             return {
                 ...state,
                 id: action.value,
