@@ -20,7 +20,7 @@ class Job extends Component {
     render() {
         console.log(this.props.mode);
         let finalCss = [classes.root]
-         !this.props.mode ? finalCss = [classes.root] : finalCss = [classes.root, classes.dark].join(' ') 
+        //  !this.props.mode ? finalCss = [classes.root] : finalCss = [classes.root, classes.dark].join(' ') 
         return (
             <Card className={finalCss} onClick={() => this.clickSingleJob(this.props.id)} >
                 <CardContent>

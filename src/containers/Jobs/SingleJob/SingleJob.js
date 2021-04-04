@@ -13,10 +13,10 @@ class SingleJob extends Component {
 
     render() {
         let finalCss = [classes.root]
-        { this.props.mode ? finalCss = [classes.root] : finalCss = [classes.root, classes.dark].join(' ') }
+        this.props.mode ? finalCss = [classes.root] : finalCss = [classes.root, classes.dark].join(' ')
         return (
             <div>
-                <Toolbar/>
+                <Toolbar />
                 <Card className={finalCss} >
                     <CardContent>
                         <Typography className={classes.title} color="textSecondary" gutterBottom>

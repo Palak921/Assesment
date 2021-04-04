@@ -11,23 +11,23 @@ import Toolbar from '../../components/UI/Navbar/Toolbar/Toolbar';
 
 class Main extends Component {
 
-      state = {
+    state = {
         mode: 'light'
-      }
+    }
 
 
     clickHandler = () => {
-        { this.props.mode  ? this.setState({ mode: 'light' }) : this.setState({ mode: 'dark' }) }
+        this.props.mode ? this.setState({ mode: 'light' }) : this.setState({ mode: 'dark' })
     }
 
     render() {
         let classCss = ['Main']
-        { this.props.mode ? classCss = [classes.Main, classes.dark].join(' ') : classCss = [classes.Main] }
+        this.props.mode ? classCss = [classes.Main, classes.dark].join(' ') : classCss = [classes.Main]
         return (
             <div className={classCss}>
                 <Toolbar />
                 <SearchBar />
-                <ChangeMode clicked={()=>this.props.onClick(this.props.mode)} mode={this.state.mode} />
+                <ChangeMode clicked={() => this.props.onClick(this.props.mode)} mode={this.state.mode} />
 
                 <Jobs />
 
@@ -36,9 +36,9 @@ class Main extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch =>{
-    return{
-        onClick: (mode) => dispatch({type : mode})
+const mapDispatchToProps = dispatch => {
+    return {
+        onClick: (mode) => dispatch({ type: mode })
     }
 }
 

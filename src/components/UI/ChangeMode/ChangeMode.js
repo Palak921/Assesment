@@ -9,7 +9,7 @@ class ChangeMode extends Component {
 
     changeModeHandler = () => {
         this.props.clicked()
-        { this.state.changed === 'dark' ? this.setState({ changed: 'light' }) : this.setState({ changed: 'dark' }) }
+        this.state.changed === 'dark' ? this.setState({ changed: 'light' }) : this.setState({ changed: 'dark' })
     }
 
     render() {

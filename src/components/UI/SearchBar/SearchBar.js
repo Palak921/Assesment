@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import './SearchBar.module.css';
-import axios from 'axios';
 
 
 const SearchBar = () => {
@@ -23,11 +23,8 @@ const SearchBar = () => {
             .catch(err => {
                 console.log(err);
             })
+        // this.props.onSearch(myOptions);
 
-        let searchData = {
-            ...this.props.search,
-            search: myOptions
-        }
     }
 
     return (
@@ -51,10 +48,5 @@ const SearchBar = () => {
     );
 }
 
-const mapStatetoProps = state => {
-    return {
-        search: state.search
-    }
-}
 
 export default SearchBar;
